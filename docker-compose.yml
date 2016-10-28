@@ -1,0 +1,13 @@
+client:
+  image: alpine
+  container_name: mysql-client
+  links:
+    - server
+  tty: true
+  command: ash
+
+server:
+  image: mysql
+  container_name: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: pass
